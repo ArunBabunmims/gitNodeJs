@@ -1,82 +1,106 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Login Page</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Facility Application Form</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            margin-top: 50px;
+            max-width: 50%;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 10px 0px;
+        }
+        .form-header {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+    </style>
 </head>
-<style>
-    body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f0f0f0;
-}
-
-.login-container {
-  background-color: #fff;
-  padding: 50px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-label {
-  font-weight: bold;
-}
-
-input {
-  padding: 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-</style>
 <body>
-  <div class="login-container">
-    <h1>Login</h1>
-    <form>
-      <div class="form-group">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" placeholder="Enter your username" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" placeholder="Enter your password" required>
-      </div>
-      <button type="submit">Login</button>
-    </form>
-  </div>
+<!--navigation-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow mb-5 bg-body-tertiary rounded sticky-lg-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="/images/logo NMIMS.png" height="60" alt="NMIMS Logo">
+            </a>
+        </div>
+    </nav>
+
+ <!-- form -->
+    <div class="container">
+        <h2 class="form-header" style="padding-top: 25px;">Bus Facility Application Form</h2>
+        <form>
+            <div class="form-group">
+                <label for="studentNo">Student No. (11 Digit):</label>
+                <input type="text" class="form-control" id="studentNo" maxlength="11" required>
+            </div>
+            <div class="form-group">
+                <label for="studentName">Name of the Student:</label>
+                <input type="text" class="form-control" id="studentName" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Residential Address:</label>
+                <textarea class="form-control" id="address" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="contactNo">Student Contact Number:</label>
+                <input type="text" class="form-control" id="contactNo" required>
+            </div>
+            <div class="form-group">
+                <label for="email">NMIMS Email ID:</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="program">Program:</label>
+                <select class="form-control" id="program" required>
+                    <option value="8001">MBA</option>
+                    <option value="7401">B. Com (Hons.)</option>
+                    <option value="7402">BBA</option>
+                    <option value="8101">B.A., LL.B (Hons.)</option>
+                    <option value="8102">B.B.A., LL.B (Hons.)</option>
+                    <option value="7002">B. Tech (Computer Engineering)</option>
+                    <option value="7056">B. Tech (AI & DS)</option>
+                    <option value="7047">MBA (Tech) Computer</option>
+                    <option value="7036">B. Tech (CSBS)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="programYear">Program Year:</label>
+                <select class="form-control" id="programYear" required>
+                    <option value="1st">1st</option>
+                    <option value="2nd">2nd</option>
+                    <option value="3rd">3rd</option>
+                    <option value="4th">4th</option>
+                    <option value="5th">5th</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="busFeeReceipt">Attach Bus fees payment acknowledgement / transaction receipt (only in JPEG/PDF Form):</label>
+                <input type="file" class="form-control-file" id="busFeeReceipt" accept=".jpeg,.jpg,.pdf" required>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="agreeRoute" required>
+                <label class="form-check-label" for="agreeRoute">I hereby undertake and agree that Bus Service provided by NMIMS is a facility to the students who wish to come by Bus. Therefore finalization of Bus Route & Bus Stop is solely on the discretion of NMIMS Indore.</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="agreeFee" required>
+                <label class="form-check-label" for="agreeFee">I hereby undertake and agree that the Bus Facility is for Academic Year 2024-25 only & Bus Fees for the period is Rs. 36,000/-. There is no facility of paying the fees in instalment. Bus Facility opted anytime during the Academic Year will be charged fully. Bus fees is non refundable. Once opted, there is no provision of opting out of Bus Facility.</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="agreeDiscipline" required>
+                <label class="form-check-label" for="agreeDiscipline">I hereby declare that I will be strictly following the Institute Disciplinary Norms while using the Bus Facility and will all the safety measures as and when guided by the Institute.</label>
+            </div>
+            <div style="padding-bottom: 50px;">
+            <button type="submit" class="btn btn-primary" style="margin-left: 38%; width: 150px;">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
